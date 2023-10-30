@@ -107,18 +107,18 @@ u_db.connect()
 u_db.create_tables([Warns, Language, Join, Mute, Ticket, TicketRole, Logs])
 
 cogs_list = [
-    'Au_econ',
-    'Au_mod',
-    'Au_util',
-    'Au_info',
-    'Au_fun'
+    'As_econ',
+    'As_mod',
+    'As_util',
+    'As_info',
+    'As_fun'
 ]
 for cog in cogs_list:
     bot.load_extension(f'{cog}')
 
 community_rights = 'Mester Satellite, © 2023 All rights reserved'
 creator_url = 'https://cdn.discordapp.com/avatars/830486806478848040/cb206fa6511033c04a91016af44a6c65.png?size=1024'
-game = discord.Game("Aurix community🌟")
+game = discord.Game("Astatine community🌟")
 
 @bot.event
 async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
