@@ -7,7 +7,7 @@ from random import choice
 import sqlite3
 import peewee
 from peewee import *
-from Aurix_base import Language
+from Astatine_base import Language
 
 class Fun(commands.Cog):
     def __init__(self, bot):
