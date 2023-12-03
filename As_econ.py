@@ -5,7 +5,7 @@ import random
 from random import choice
 import peewee
 from peewee import *
-from Aurix_base import Money, Bank, Shop, Language
+from Astatine_base import Money, Bank, Shop, Language
 
 class Econ(commands.Cog):
     def __init__(self, bot):
