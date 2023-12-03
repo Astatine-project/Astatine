@@ -120,87 +120,69 @@ community_rights = 'Mester Satellite, © 2023 All rights reserved'
 creator_url = 'https://cdn.discordapp.com/avatars/830486806478848040/cb206fa6511033c04a91016af44a6c65.png?size=1024'
 game = discord.Game("Astatine community🌟")
 
-@bot.event
-async def on_application_command_error(ctx: discord.ApplicationContext, error: discord.DiscordException):
-    if isinstance(error, commands.CommandNotFound):
+async def on_application_command_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
         getlang = Language.get_or_none(guild_id=ctx.guild.id)
-        if getlang is not None:
-            for language in Language.select().where(Language.guild_id == ctx.guild.id):
-                if language.lang == "ru":
-                    em = discord.Embed(title="⚠Несуществующая команда⚠",
-                                       description='Данной команды не существует.',
-                                       color=0xFFFF00)
-                    await ctx.send(embed=em)
-                else:
-                    em = discord.Embed(title="⚠Non-existing command⚠",
-                                       description='Command does not exist.',
-                                       color=0xFFFF00)
-                    await ctx.send(embed=em)
+        if getlang is None:
+            eco = discord.Embed(title='Error!', colour=0xf1c40f)
+            eco.add_field(name='Command on cooldown! Retry in 1 hour',
+                          value='**__________________**', inline=False)
+            await ctx.respond(embed=eco, ephemeral=True)
         else:
-            em = discord.Embed(title="⚠Non-existing command⚠",
-                               description='Command does not exist.',
-                               color=0xFFFF00)
-            await ctx.send(embed=em)
-
+            for language in Language.select().where(Language.guild_id == ctx.guild.id):
+                if language.lang == 'en':
+                    eco = discord.Embed(title='Error!', colour=0xf1c40f)
+                    eco.add_field(name='Command on cooldown! Retry in 1 hour',
+                                  value='**__________________**', inline=False)
+                    await ctx.respond(embed=eco, ephemeral=True)
+                else:
+                    eco = discord.Embed(title='Error!', colour=0xf1c40f)
+                    eco.add_field(
+                        name='У этой команды кулдаун! Попробуйте снова через 1 час',
+                        value='**__________________**', inline=False)
+                    await ctx.respond(embed=eco, ephemeral=True)
     elif isinstance(error, commands.MissingPermissions):
         getlang = Language.get_or_none(guild_id=ctx.guild.id)
-        if getlang is not None:
-            for language in Language.select().where(Language.guild_id == ctx.guild.id):
-                if language.lang == "ru":
-                    em = discord.Embed(title="⚠Недостаточно прав⚠",
-                                       description='У вас недостаточно прав на выполнение этой команды.',
-                                       color=0x39d0d6)
-                    await ctx.send(embed=em)
-                else:
-                    em = discord.Embed(title="⚠Not enough permissions⚠",
-                                       description='You dont have enough permissions to execute this command.',
-                                       color=0x39d0d6)
-                    await ctx.send(embed=em)
+        if getlang is None:
+            eco = discord.Embed(title='Error!', colour=0xf1c40f)
+            eco.add_field(name='You do not have enough permissions! Contact server owner, if you think this is a mistake',
+                          value='**__________________**', inline=False)
+            await ctx.respond(embed=eco, ephemeral=True)
         else:
-            em = discord.Embed(title="⚠Not enough permissions⚠",
-                               description='You dont have enough permissions to execute this command.',
-                               color=0x39d0d6)
-            await ctx.send(embed=em)
-
-    elif isinstance(error, commands.CommandOnCooldown):
+            for language in Language.select().where(Language.guild_id == ctx.guild.id):
+                if language.lang == 'en':
+                    eco = discord.Embed(title='Error!', colour=0xf1c40f)
+                    eco.add_field(name='You do not have enough permissions! Contact server owner, if you think this is a mistake',
+                                  value='**__________________**', inline=False)
+                    await ctx.respond(embed=eco, ephemeral=True)
+                else:
+                    eco = discord.Embed(title='Error!', colour=0xf1c40f)
+                    eco.add_field(
+                        name='У вас недостаточно разрешений! Если вы считаете, что это ошибка, свяжитесь с владельцем сервера.',
+                        value='**__________________**', inline=False)
+                    await ctx.respond(embed=eco, ephemeral=True)
+    elif isinstance(error, commands.BotMissingPermissions):
         getlang = Language.get_or_none(guild_id=ctx.guild.id)
-        if getlang is not None:
-            for language in Language.select().where(Language.guild_id == ctx.guild.id):
-                if language.lang == "ru":
-                    em = discord.Embed(title="⚠Данная команда на задержке⚠",
-                                       description=f"Попробуйте снова через {error.retry_after:.2f}s.",
-                                       color=0x39d0d6)
-                    await ctx.send(embed=em)
-                else:
-                    em = discord.Embed(title="⚠Command is on cooldown⚠",
-                                       description=f"Try again in {error.retry_after:.2f}s.",
-                                       color=0x39d0d6)
-                    await ctx.send(embed=em)
+        if getlang is None:
+            eco = discord.Embed(title='Error!', colour=0xf1c40f)
+            eco.add_field(name='Bot does not have enough permissions',
+                          value='**__________________**', inline=False)
+            await ctx.respond(embed=eco, ephemeral=True)
         else:
-            em = discord.Embed(title="⚠Command is on cooldown⚠",
-                               description=f"Try again in {error.retry_after:.2f}s.",
-                               color=0x39d0d6)
-            await ctx.send(embed=em)
-
+            for language in Language.select().where(Language.guild_id == ctx.guild.id):
+                if language.lang == 'en':
+                    eco = discord.Embed(title='Error!', colour=0xf1c40f)
+                    eco.add_field(name='Bot does not have enough permissions',
+                                  value='**__________________**', inline=False)
+                    await ctx.respond(embed=eco, ephemeral=True)
+                else:
+                    eco = discord.Embed(title='Error!', colour=0xf1c40f)
+                    eco.add_field(
+                        name='У бота недостаточно прав',
+                        value='**__________________**', inline=False)
+                    await ctx.respond(embed=eco, ephemeral=True)
     else:
-        getlang = Language.get_or_none(guild_id=ctx.guild.id)
-        if getlang is not None:
-            for language in Language.select().where(Language.guild_id == ctx.guild.id):
-                if language.lang == "ru":
-                    em = discord.Embed(title="⚠Недостаточно прав⚠",
-                                       description='У бота недостаточно прав на выполнение этой команды.',
-                                       color=0x39d0d6)
-                    await ctx.send(embed=em)
-                else:
-                    em = discord.Embed(title="⚠Not enough permissions⚠",
-                                       description='Bot doesnt have enough permissions to execute this command.',
-                                       color=0x39d0d6)
-                    await ctx.send(embed=em)
-        else:
-            em = discord.Embed(title="⚠Not enough permissions⚠",
-                               description='Bot doesnt have enough permissions to execute this command.',
-                               color=0x39d0d6)
-            await ctx.send(embed=em)
+        raise error
 
 @bot.event
 async def on_ready():
