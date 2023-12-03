@@ -15,8 +15,8 @@ intents.members = True
 bot = commands.Bot(command_prefix='A.', intents=intents)
 bot.remove_command('help')
 
-e_db = MySQLDatabase('railway', user='root', password='hgqkthb07raKcFVRECl3',
-                         host='containers-us-west-111.railway.app', port=6020)
+e_db = MySQLDatabase('railway', user='root', password='56HcgAfaG4B-cfDEhdg-2FfhC1fB2hHF',
+                         host='monorail.proxy.rlwy.net', port=46298)
 
 class Money(Model):
     guild_id = BigIntegerField()
