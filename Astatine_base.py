@@ -684,4 +684,4 @@ async def report(ctx):
     else:
         await ctx.send_modal(Enrepform(title="Error report form"))
 
-bot.run('MTAxMjAyOTU1MjYzNTE2MjY3NA.GNdCdB.n2zTGQjsvfFsATOGT1ijSfJOv_gSIbwSpSOU3U')
+bot.run('MTE4MDg5MzQ5MDg4OTEwOTY1NA.GhwHqA.AxfL2iXheRX0v3VSaqLZWUtmthKN6EQZW61Ngg')
