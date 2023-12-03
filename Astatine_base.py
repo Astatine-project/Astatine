@@ -46,8 +46,8 @@ class Shop(Model):
 e_db.connect()
 e_db.create_tables([Money, Bank, Shop])
 
-u_db = MySQLDatabase('railway', user='root', password='fFWAwPLFLR7SN2O71vlp',
-                         host='containers-us-west-86.railway.app', port=7405)
+u_db = MySQLDatabase('railway', user='root', password='eFeAC1fgFHAebA-C-6b1EGge3Bg1gece',
+                         host='viaduct.proxy.rlwy.net', port=14628)
 
 class Warns(Model):
     guild_id = BigIntegerField()
