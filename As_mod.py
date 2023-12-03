@@ -5,7 +5,7 @@ import random
 from random import choice
 import peewee
 from peewee import *
-from Aurix_base import Warns, Language, Join, Mute, Ticket, TicketRole, Logs
+from Astatine_base import Warns, Language, Join, Mute, Ticket, TicketRole, Logs
 
 class ticket_conf_en(discord.ui.View):
     @discord.ui.button(label="Close", style=discord.ButtonStyle.danger)
