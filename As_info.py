@@ -5,7 +5,7 @@ import random
 from random import choice
 import peewee
 from peewee import *
-from Aurix_base import Language
+from Astatine_base import Language
 
 community_rights = 'Mester Satellite, © 2023 All rights reserved'
 creator_url = 'https://cdn.discordapp.com/avatars/830486806478848040/cb206fa6511033c04a91016af44a6c65.png?size=1024'
