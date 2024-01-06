@@ -9,7 +9,7 @@ from peewee import *
 from random import choice
 
 intents = discord.Intents.default()
-#intents.presences = True
+intents.presences = True
 intents.members = True
 
 bot = commands.Bot(command_prefix='A.', intents=intents)
