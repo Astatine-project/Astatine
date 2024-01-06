@@ -15,8 +15,8 @@ intents.members = True
 bot = commands.Bot(command_prefix='A.', intents=intents)
 bot.remove_command('help')
 
-e_db = MySQLDatabase('railway', user='root', password='56HcgAfaG4B-cfDEhdg-2FfhC1fB2hHF',
-                         host='monorail.proxy.rlwy.net', port=46298)
+e_db = MySQLDatabase('railway', user='root', password='aGb5F1GdD-dE-b-ef5BF64gFd412hGHa',
+                         host='roundhouse.proxy.rlwy.net', port=59577)
 
 class Money(Model):
     guild_id = BigIntegerField()
@@ -46,8 +46,8 @@ class Shop(Model):
 e_db.connect()
 e_db.create_tables([Money, Bank, Shop])
 
-u_db = MySQLDatabase('railway', user='root', password='eFeAC1fgFHAebA-C-6b1EGge3Bg1gece',
-                         host='viaduct.proxy.rlwy.net', port=14628)
+u_db = MySQLDatabase('railway', user='root', password='-25eAga1D1cE6C1d2g2h3BCF4BeEb2-h',
+                         host='viaduct.proxy.rlwy.net', port=48623)
 
 class Warns(Model):
     guild_id = BigIntegerField()
