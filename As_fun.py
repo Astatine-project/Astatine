@@ -15,7 +15,7 @@ class Fun(commands.Cog):
 
     @commands.slash_command(name="fox", description="random picture of a cute fox🦊")
     async def fox(self, ctx):
-        response = requests.get('https://some-random-api.ml/img/fox')
+        response = requests.get('https://randomfox.ca/floof')
         json_fox = json.loads(response.text)
         embed = discord.Embed(color=0xff9900, title='Random Fox')
         embed.set_image(url=json_fox['link'])
