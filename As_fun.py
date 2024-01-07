@@ -83,7 +83,7 @@ class Fun(commands.Cog):
 
     @commands.slash_command(name="hug", description="hugs mentioned user")
     async def hug(self, ctx, user: discord.Member):
-        if user == bot.user:
+        if user == self.bot.user:
             getlang = Language.get_or_none(guild_id=ctx.guild.id)
             if getlang is not None:
                 for language in Language.select().where(Language.guild_id == ctx.guild.id):
