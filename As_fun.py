@@ -24,7 +24,7 @@ class Fun(commands.Cog):
 
     @commands.slash_command(name="cat", description="random picture of a cute cat🐱")
     async def cat(self, ctx):
-        response = requests.get('https://some-random-api.ml/img/cat')
+        response = requests.get('https://api.thecatapi.com/v1/images/search')
         json_cat = json.loads(response.text)
         embed = discord.Embed(color=0xff9900, title='Random Cat')
         embed.set_image(url=json_cat['link'])
