@@ -118,7 +118,7 @@ for cog in cogs_list:
 
 community_rights = 'Mester Satellite, © 2023 All rights reserved'
 creator_url = 'https://cdn.discordapp.com/avatars/830486806478848040/cb206fa6511033c04a91016af44a6c65.png?size=1024'
-game = discord.Game("Astatine community🌟")
+game = discord.Game("Server Issue))))")
 
 async def on_application_command_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
@@ -288,7 +288,7 @@ async def on_member_remove(member):
                                                inline=False)
                             await channel.send(embed=join_emb)
                         else:
-                            join_emb = discord.Embed(title='📋User leaved server', colour=0x39d0d6)
+                            join_emb = discord.Embed(title='📋User left server', colour=0x39d0d6)
                             join_emb.add_field(name='📁Username:', value=member.name, inline=False)
                             join_emb.add_field(name='📁User ID:', value=member.id, inline=False)
                             join_emb.add_field(name='📁Account created:',
@@ -296,7 +296,7 @@ async def on_member_remove(member):
                                                inline=False)
                             await channel.send(embed=join_emb)
                 else:
-                    join_emb = discord.Embed(title='📋User leaved server', colour=0x39d0d6)
+                    join_emb = discord.Embed(title='📋User left server', colour=0x39d0d6)
                     join_emb.add_field(name='📁Username:', value=member.name, inline=False)
                     join_emb.add_field(name='📁User ID:', value=member.id, inline=False)
                     join_emb.add_field(name='📁Account created:',
@@ -319,7 +319,7 @@ async def on_member_update(before, after):
                     if getlang is not None:
                         for language in Language.select().where(Language.guild_id == after.guild.id):
                             if language.lang == "ru":
-                                role_emb = discord.Embed(title='📋Пользователь изменил роли', colour=0x39d0d6)
+                                role_emb = discord.Embed(title='📋Пользователю были изменены роли', colour=0x39d0d6)
                                 role_emb.add_field(name='📁Имя:', value=after.name, inline=False)
                                 role_emb.add_field(name='📁Айди:', value=after.id, inline=False)
                                 role_emb.add_field(name='📁Аккаунт был создан:',
@@ -329,7 +329,7 @@ async def on_member_update(before, after):
                                                    inline=False)
                                 await channel.send(embed=role_emb)
                             else:
-                                role_emb = discord.Embed(title='📋User changed roles', colour=0x39d0d6)
+                                role_emb = discord.Embed(title='📋User got roles changed', colour=0x39d0d6)
                                 role_emb.add_field(name='📁Username:', value=after.name, inline=False)
                                 role_emb.add_field(name='📁User ID:', value=after.id, inline=False)
                                 role_emb.add_field(name='📁Account created:',
@@ -339,7 +339,7 @@ async def on_member_update(before, after):
                                                    inline=False)
                                 await channel.send(embed=role_emb)
                     else:
-                        role_emb = discord.Embed(title='📋User changed roles', colour=0x39d0d6)
+                        role_emb = discord.Embed(title='📋User got roles changed', colour=0x39d0d6)
                         role_emb.add_field(name='📁Username:', value=after.name, inline=False)
                         role_emb.add_field(name='📁User ID:', value=after.id, inline=False)
                         role_emb.add_field(name='📁Account created:',
