@@ -117,7 +117,7 @@ for cog in cogs_list:
     bot.load_extension(f'{cog}')
 
 community_rights = 'Mester Satellite, © 2023 All rights reserved'
-creator_url = 'https://cdn.discordapp.com/avatars/830486806478848040/cb206fa6511033c04a91016af44a6c65.png?size=1024'
+creator_url = 'https://cdn.discordapp.com/attachments/1172516204842319893/1193546475813216486/image.png?ex=65ad1bc6&is=659aa6c6&hm=dbddd7c7bc9cbfbe2e4e7febbcfa1523bbcbceb99fb148c43397b2127cd35e2f&'
 game = discord.Game("Server Issue))))")
 
 async def on_application_command_error(ctx, error):
